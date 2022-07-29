@@ -1,11 +1,12 @@
 <?php get_header(); ?>
 
-
+<?php the_content(); ?>
 <div class="item-page" id="project">
 
 
   <div id="main-product-list">
     <div class="tp-container  main-info">
+      <div>
       <?php
       $title = get_the_title();
       print('<h1>' . $title . '</h1>');
@@ -30,6 +31,7 @@
             <image src="<?php echo get_template_directory_uri() ?>/assets/img/henko/key.webp">
           </div>
           <p>Fecha de Entrega: Agosto 2023</p>
+        </div>
         </div>
       </div>
     </div>

@@ -188,7 +188,7 @@ require get_template_directory() . '/inc/ajax/filter-function.php';
 
 
 // Custom page walker.
-require get_template_directory() . '/classes/class-tp-meta-box.php';
+require get_template_directory() . '/inc/tp-meta-box.php';
 
 require get_template_directory() . '/inc/contact-function.php';
 

@@ -30,9 +30,6 @@
           if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo " <li class='page-item'><a class='page-link' href='".get_pagenum_link($pages)."'><i class='flaticon flaticon-arrow'></i></a></li>";
           echo "</ul></nav>\n";
       }
-
-
-}
-
+    }
 
 ?>

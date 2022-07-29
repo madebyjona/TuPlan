@@ -3,16 +3,16 @@
 
 function filter_products()
 {
-  $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
   $tipos = $_POST['tipos'];
   $propiedad = $_POST['propiedad'];
   $zonas = $_POST['zonas'];
   $price_min = $_POST['price_min'];
   $price_max = $_POST['price_max'];
+  $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 
   $args = [
     'post_type' => 'inmueble',
-    'posts_per_page' => 3,
+    'posts_per_page' => 999,
     'post_status'  => 'publish',
     'orderby' => 'date',
     'order' => 'DESC',
@@ -74,16 +74,14 @@ function filter_products()
       );
   }
 
-  $ajaxproducts = new WP_Query($args);
-  $response = "";
-  $counter = "";
+  $query = new WP_Query($args);
 
-  if ($ajaxproducts->have_posts()) {
+  if ($query->have_posts()) {
     ob_start();
-    while ($ajaxproducts->have_posts()) : $ajaxproducts->the_post();
+    while ($query->have_posts()) : $query->the_post();
       $response .=  get_template_part('template-parts/content/content', 'list-item');
     endwhile;
-    cpt_pagination($ajaxproducts->max_num_pages);
+    cpt_pagination($query->max_num_pages);
     $output = ob_get_contents();
     ob_end_clean();
   } else {
@@ -100,7 +98,6 @@ function filter_products()
 
   echo json_encode($result);
 
-  wp_reset_postdata();
   exit;
 }
 

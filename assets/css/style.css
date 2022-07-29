@@ -78,6 +78,7 @@ a:focus {
 }
 p {
   font-weight: var(--font-weight-normal);
+  line-height: 1.6;
   margin-bottom: 15px;
 }
 
@@ -740,10 +741,11 @@ input::-webkit-inner-spin-button {
   color: var(--black-dark);
 }
 
-
-
-
-
+.inmuebles-not-found {
+  max-width: 500px;
+  margin: 0 auto 60px;
+  text-align: center;
+}
 
 /*/------- Inmuebles Sidebar -------/*/
 
@@ -979,19 +981,24 @@ input::-webkit-inner-spin-button {
 
 #about .about-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: 1fr 1fr;
   align-items: center;
 }
 
+#about .about-container-2 {
+  align-items: top;
+}
 
 .about-text {
-  padding: 15px;
+  padding: 16px;
 }
 
 
-#about p {
+#about p,
+#about h5 {
   margin-bottom: 30px;
 }
+
 
 /*/------- Proyect Page -------/*/
 
@@ -1111,6 +1118,7 @@ input::-webkit-inner-spin-button {
 
 .inmueble-description {
   margin-bottom: 60px;
+  line-height: 2;
 }
 
 .features-list {
@@ -1147,6 +1155,7 @@ input::-webkit-inner-spin-button {
 	display: flex;
 	vertical-align: middle;
   margin-bottom: 30px;
+  padding-top: 0;
 }
 .item-page .inmueble__price {
   font-size: 30px;
@@ -1664,6 +1673,9 @@ footer .rights {
   .item-page {
     padding: 15px;
   }
+  #about .about-container {
+    grid-template-columns: 1fr;
+  }  
   
 }
 

@@ -29,7 +29,7 @@
       $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
       $args = array(
         'post_type' => 'inmueble',
-        'posts_per_page' => 3,
+        'posts_per_page' => 999,
         'post_status'  => 'publish',
         'orderby' => 'date',
         'order' => 'DESC',
@@ -51,7 +51,6 @@
       ?>
       <div id="result-count"></div>
     </div>
-
 
   </div>
 
